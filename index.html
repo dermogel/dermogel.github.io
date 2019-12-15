@@ -1,0 +1,1009 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+<title>Advent Calendar</title>
+<meta name="viewport" content="width=device-width, initial-scale=1" charset= "UTF-8">
+<meta name="theme-color" content="#8aceff" />
+<link rel="icon" href="ac/favicon.png">
+<link rel="stylesheet" href="https://use.typekit.net/uee0fgf.css">
+
+
+<link rel="prefetch" href="ac/regen.gif" as="image">
+
+<script src= 
+"https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"> 
+    </script>
+<script>
+
+function sfxOn(){
+		document.getElementById("BGnoise").play();
+		document.getElementById("soundOn").style.display = "block";
+		document.getElementById("soundOff").style.display = "none";
+}
+
+function sfxOff(){
+		document.getElementById("BGnoise").pause();
+		document.getElementById("soundOn").style.display = "none";
+		document.getElementById("soundOff").style.display =  "block";
+}
+
+
+
+
+function musicOn(){
+	               var music= document.getElementById("Music");
+		music.play();
+		music.volume = 1.0;
+		document.getElementById("musicOn").style.display = "block";
+		document.getElementById("musicOff").style.display = "none";
+		music.currentTime=0;
+		music.play();
+		console.log(music.currentTime);
+		setInterval(function(){
+			   
+		        if(music.currentTime>3.4){
+			        document.getElementById("arm").style.display = "block";
+	         }
+	         
+		        if(music.currentTime>4){
+	        		document.getElementById("musicOn").style.display = "none";
+	        		document.getElementById("musicOff").style.display =  "block";  
+			music.volume = 0.0;
+		        }
+		        
+		        if(music.currentTime>4.3){
+			document.getElementById("arm").style.display = "none"; 
+			music.pause();       
+		        }
+		        
+		      },100);
+		
+}
+
+function musicOff(){
+		document.getElementById("Music").pause();
+		document.getElementById("Music").volume= 1.0;
+		document.getElementById("musicOn").style.display = "none";
+		document.getElementById("musicOff").style.display =  "block";
+}
+
+function realOn(){
+		document.getElementById("regen").style.display= "block";
+		document.getElementById("realityOn").style.display= "block";
+		document.getElementById("realityOff").style.display= "none";
+		
+		if($('#soundOn').css('display') == 'block' || $('#musicOn').css('display') == 'block')
+		{
+		document.getElementById("rainSFX").play();
+		document.getElementById("BGnoise").pause();	
+		}
+		
+}
+
+function realOff(){
+		document.getElementById("regen").style.display= "none";
+		document.getElementById("realityOn").style.display= "none";
+		document.getElementById("realityOff").style.display= "block";
+		document.getElementById("rainSFX").pause();
+		
+		if($('#soundOn').css('display') == 'block')
+		{
+		document.getElementById("BGnoise").play();	
+		}
+}
+
+
+var d2 = false; var d3 = false; var d4 = false; var d5 = false; var d6 = false; var d7 = false; var d8 = false; var d9 = false; var d10 = false; var d11 = false; var d12 = false; var d13 = false; var d14 = false; var d15 = false; var d16 = false; var d17 = false; var d18 = false; var d19 = false; var d20 = false; var d21 = false; var d22 = false; var d23 = false; var d24 = false; 
+
+var date = new Date();
+var day = date.getDate();
+console.log(day);
+
+function unlock(){
+	if(day < 24) {
+	var daysLeft = 24 - day
+	day = day + daysLeft;
+	console.log(day)
+}
+}
+
+function day1() {
+  document.getElementById("d1").style.display = "block";
+  d2 = true;
+}
+
+function day2() {
+	if(d2 == true && day >= 2){
+  document.getElementById("d2").style.display = "block";
+  d3 = true;
+} else {
+	document.getElementById("num2").style.display = block;
+}
+}
+
+function day3() {
+	if(d3 == true && day >= 3){
+  document.getElementById("d3").style.display = "block";
+  document.getElementById("d33").style.display = "block";
+  d4 = true;
+} else {
+	document.getElementById("num3").style.display = block;
+}
+}
+
+function day4() {
+	if(d4 == true && day >= 4){
+  document.getElementById("snowLoading").style.display = "block";
+  document.getElementById("mainFrame").src = "ac/Days/schneeeismeer.jpg";
+  setTimeout(function(){
+  	document.getElementById("snowLoading").style.display = "none";
+  },10000);
+  document.getElementById("d2").src = "ac/Days/schnee.png";
+  document.getElementById("d33").style.display = "none";
+  d5 = true;
+} else {
+	document.getElementById("num4").style.display = block;
+}
+}
+
+function day5() {
+	if(d5 == true && day >= 5){
+  document.getElementById("d5").style.display = "block";
+  d6 = true;
+} else {
+	document.getElementById("num5").style.display = block;
+}
+}
+
+function day6() {
+	if(d6 == true && day >= 6){
+  document.getElementById("d6").style.display = "block";
+  d7 = true;
+} else {
+	document.getElementById("num6").style.display = block;
+}
+}
+
+function day7() {
+	if(d7 == true && day >= 7){
+  document.getElementById("d7").style.display = "block";
+  d8 = true;
+} else {
+	document.getElementById("num7").style.display = block;
+}
+}
+
+function day8() {
+	if(d8 == true && day >= 8){
+  document.getElementById("d8").style.display = "block";
+  document.getElementById("d88").style.display = "block";
+  d9 = true;
+} else {
+	document.getElementById("num8").style.display = block;
+}
+}
+
+function day9() {
+	if(d9 == true && day >= 9){
+  document.getElementById("d9").style.display = "block";
+  d10 = true;
+} else {
+	document.getElementById("num9").style.display = block;
+}
+}
+
+function day10() {
+	if(d10 == true && day >= 10){
+  document.getElementById("d10").style.display = "block";
+  d11 = true;
+} else {
+	document.getElementById("num10").style.display = block;
+}
+}
+
+function day11() {
+	if(d11 == true && day >= 11){
+  document.getElementById("d11").style.display = "block";
+  document.getElementById("d1111").style.display = "block";
+  d12 = true;
+} else {
+	document.getElementById("num11").style.display = block;
+}
+}
+
+function day12() {
+	if(d12 == true && day >= 12){
+  document.getElementById("d12").style.display = "block";
+  d13 = true;
+} else {
+	document.getElementById("num12").style.display = block;
+}
+}
+
+function day13() {
+	if(d13 == true && day >= 13){
+  document.getElementById("d13").style.display = "block";
+  d14 = true;
+} else {
+	document.getElementById("num13").style.display = block;
+}
+}
+
+function day14() {
+	if(d14 == true && day >= 14){
+  document.getElementById("lighthouse").src = "ac/Days/LighthouseCandle.gif";
+  d15 = true;
+} else {
+	document.getElementById("num14").style.display = block;
+}
+}
+
+function day15() {
+	if(d15 == true && day >= 15){
+  document.getElementById("d15").style.display = "block";
+  d16 = true;
+} else {
+	document.getElementById("num15").style.display = block;
+}
+}
+
+function day16() {
+	if(d16 == true && day >= 16){
+  document.getElementById("d16").style.display = "block";
+  d17 = true;
+} else {
+	document.getElementById("num16").style.display = block;
+}
+}
+
+function day17() {
+	if(d17 == true && day >= 17){
+  document.getElementById("d17").style.display = "block";
+  d18 = true;
+} else {
+	document.getElementById("num17").style.display = block;
+}
+}
+
+function day18() {
+	if(d18 == true && day >= 18){
+  document.getElementById("d18").style.display = "block";
+  d19 = true;
+} else {
+	document.getElementById("num18").style.display = block;
+}
+}
+
+function day19() {
+	if(d19 == true && day >= 19){
+  document.getElementById("d19").style.display = "block";
+  d20 = true;
+} else {
+	document.getElementById("num19").style.display = block;
+}
+}
+
+function day20() {
+	if(d20 == true && day >= 20){
+  document.getElementById("d2").src = "ac/Days/baeume.png";
+  d21 = true;
+} else {
+	document.getElementById("num20").style.display = block;
+}
+}
+
+function day21() {
+	if(d21 == true && day >= 21){
+  document.getElementById("d21").style.display = "block";
+  d22 = true;
+} else {
+	document.getElementById("num21").style.display = block;
+}
+}
+
+function day22() {
+	if(d22 == true && day >= 22){
+  document.getElementById("d22").style.display = "block";
+  d23 = true;
+} else {
+	document.getElementById("num22").style.display = block;
+}
+}
+
+function day23() {
+	if(d23 == true && day >= 23){
+  document.getElementById("d23").style.display = "block";
+  d24 = true;
+} else {
+	document.getElementById("num23").style.display = block;
+}
+}
+
+function day24() {
+	if(d24 == true && day >= 24){
+  document.getElementById("ndr").style.display = "block";
+  setTimeout(function(){
+  	document.getElementById("ndr").style.display = "none";
+  },3000);
+} else {
+	document.getElementById("num24").style.display = block;
+}
+}
+
+
+</script>
+<style>
+	body {
+		background-color: #626262;
+	         		
+	}
+	
+	::-moz-selection { background: white; text-shadow: none;}
+	::selection { background: white; text-shadow: none;}
+
+	::-webkit-scrollbar { width: 0 !important }
+	
+	#title {
+		font-family: novel-mono-pro, sans-serif;
+		font-weight: 800;
+		font-style: normal;
+		letter-spacing: -0.25vw;
+		z-index: 600;
+		font-size: 2.5vw;
+		position: fixed;
+		top: -1.5vw;
+		left: 2vw;
+	}
+
+	#main { 
+		text-align: center;
+	}
+	
+	.d{
+		position: absolute;
+		display: none;
+		z-index: 100;
+		user-select: none;
+		        -moz-user-select: none;
+		        -khtml-user-select: none;
+		        -webkit-user-select: none;
+		        -o-user-select: none;
+	}
+	
+	
+	#d1 {
+		top: 26vw;
+		left: 55vw;
+		width: 15vw;
+		height: auto;
+	}
+	
+	#d2 {
+		top: 3vw;
+		left: 3vw;
+		width: 90vw;
+		height: auto;
+	}
+	
+	#lighthouse {
+		top: 11vw;
+		left: 39vw;
+		width: 6vw;
+		height: auto;
+		display: block;
+	}
+	
+	#d3 {
+		top: 17vw;
+		left: 10vw;
+		width: 8vw;
+		height: auto;
+	} 
+	
+	#d33 {
+		top: 1vw;
+		left: 5vw;
+		width: 90vw;
+		height: auto;
+	} 
+	
+	#d4 {
+		top: 2.5vw;
+		left: 42vw;
+		width: 15vw;
+		height: auto;
+	}
+	
+	#d5 {
+		top: 34vw;
+		left: -1vw;
+		width: 15vw;
+		height: auto;
+	}
+	
+	#d6 {
+		top: 12vw;
+		left: 37vw;
+		width: 30vw;
+		height: auto;
+	}
+	
+	#d7 {
+		top: 45.5vw;
+		left: 69vw;
+		width: 19vw;
+		height: auto;
+	}
+	
+	#d8 {
+		top: 10vw;
+		left: 81vw;
+		width: 7vw;
+		height: auto;
+	}
+	
+	#d88 {
+		top: 10.25vw;
+		left: 86vw;
+		width: 7vw;
+		height: auto;
+	}
+	
+	#d9 {
+		top: 15vw;
+		left: 71vw;
+		width: 15vw;
+		height: auto;
+	}
+	
+	#d10 {
+		top: 31vw;
+		left: 9.5vw;
+		width: 15vw;
+		height: auto;
+	}
+	
+	#d11 {
+		top: 42vw;
+		left: 90vw;
+		width: 8vw;
+		height: auto;
+	}
+	
+	#d1111 {
+		top: 36.5vw;
+		left: 89.7vw;
+		width: 6vw;
+		height: auto;
+	}
+	
+	#d12 {
+		top: 5.5vw;
+		left: 58vw;
+		width: 15vw;
+		height: auto;
+	}
+	
+	#d13 {
+		top: 50.5vw;
+		left: 54vw;
+		width: 12vw;
+		height: auto;
+	}
+	
+	
+	#d15 {
+		top: 12vw;
+		left: 50vw;
+		width: 10vw;
+		height: auto;
+	}
+	
+	#d16 {
+		top: 18vw;
+		left: 24vw;
+		width: 15vw;
+		height: auto;
+	}
+	
+	#d17 {
+		top: 19vw;
+		left: 88vw;
+		width: 10vw;
+		height: auto;
+	}
+	
+	#d18 {
+		top: 31vw;
+		left: 79vw;
+		width: 12vw;
+		height: auto;
+	}
+	
+	#d19 {
+		top: 22vw;
+		left: 40vw;
+		width: 7vw;
+		height: auto;
+	}
+	
+	#d20 {
+		top: 24vw;
+		left: 26vw;
+		width: 15vw;
+		height: auto;
+	}
+	
+	#d21 {
+		top: 2vw;
+		left: 90.5vw;
+		width: 5.75vw;
+		height: auto;
+	}
+	
+	#d22 {
+		top: 11vw;
+		left: 87.5vw;
+		width: 15vw;
+		height: auto;
+	}
+	
+	#d23 {
+		top: 22vw;
+		left: 69vw;
+		width: 13vw;
+		height: auto;
+	}
+	
+	#d24 {
+		top: 2vw;
+		left: 50vw;
+		width: 15vw;
+		height: auto;
+	}
+	
+	.landscape {
+		width: 100vw;
+		height: auto;
+		z-index: 10;
+		position: absolute;
+		top: 0vh;
+		left: 0px;
+		user-select: none;
+		        -moz-user-select: none;
+		        -khtml-user-select: none;
+		        -webkit-user-select: none;
+		        -o-user-select: none;
+		
+	}
+	
+	#regen {
+		z-index: 800;
+		display: none;
+	}
+
+	.numbers {
+		font-family: novel-mono-pro, sans-serif;
+		font-weight: 800;
+		font-style: normal;
+		color: black;
+		z-index: 500;
+		font-size: 3vw;
+		position: absolute;
+		cursor: pointer;
+		user-select: none;
+		        -moz-user-select: none;
+		        -khtml-user-select: none;
+		        -webkit-user-select: none;
+		        -o-user-select: none;
+	}
+	
+	.numbers:hover{
+		color: red;
+	}
+		
+	
+	#num1 {
+		display: block;
+		top: 29vw;
+		left: 63vw;
+	}
+	
+	#num2 {
+		top: 26vw;
+		left: 21vw;
+	}
+	
+	#num3 {
+		top: 15vw;
+		left: 15vw;
+	} 
+	
+	#num4 {
+		top: 2.5vw;
+		left: 42vw;
+	}
+	
+	#num5 {
+		top: 36vw;
+		left: 5vw;
+	}
+	
+	#num6 {
+		top: 22vw;
+		left: 53vw;
+	}
+	
+	#num7 {
+		top: 51vw;
+		left: 76vw;
+	}
+	
+	#num8 {
+		top: 11vw;
+		left: 87vw;
+	}
+	
+	#num9 {
+		top: 16vw;
+		left: 79vw;
+	}
+	
+	#num10 {
+		top: 32vw;
+		left: 13vw;
+	}
+	
+	#num11 {
+		top: 41vw;
+		left: 93vw;
+	}
+	
+	#num12 {
+		top: 11vw;
+		left: 67vw;
+	}
+	
+	#num13 {
+		top: 53.5vw;
+		left: 57.5vw;
+	}
+	
+	#num14 {
+		top: 13.5vw;
+		left: 40vw;
+	}
+	
+	#num15 {
+		top: 13vw;
+		left: 51.5vw;
+	}
+	
+	#num16 {
+		top: 16.5vw;
+		left: 31vw;
+	}
+	
+	#num17 {
+		top: 25vw;
+		left: 90.5vw;
+	}
+	
+	#num18 {
+		top: 32.5vw;
+		left: 82vw;
+	}
+	
+	#num19 {
+		top: 21.5vw;
+		left: 41.5vw;
+	}
+	
+	#num20 {
+		top: 24vw;
+		left: 26vw;
+	}
+	
+	#num21 {
+		top: 2.5vw;
+		left: 92.5vw;
+	}
+	
+	#num22 {
+		top: 12vw;
+		left: 94.5vw;
+	}
+	
+	#num23 {
+		top: 35vw;
+		left: 73vw;
+	}
+	
+	#num24 {
+		top: 2vw;
+		left: 50vw;
+	}
+	
+	
+	
+	#soundOn {
+		display: none;
+	}
+	
+	#soundOff {
+		display: block;
+	}
+	
+	.speakerIcon {
+		cursor: pointer;
+		z-index: 600;
+		position: fixed;
+		width: auto;
+		height: 4vw;
+		right: 2vw;
+		top: 1vw;
+		cursor: pointer;
+		user-select: none;
+		-moz-user-select: none;
+		-khtml-user-select: none;
+		-webkit-user-select: none;
+		-o-user-select: none;
+	}
+	
+	.musicIcon {
+		cursor: pointer;
+		z-index: 600;
+		position: fixed;
+		width: auto;
+		height: 4vw;
+		right: 10vw;
+		top: 1vw;
+		cursor: pointer;
+		user-select: none;
+		-moz-user-select: none;
+		-khtml-user-select: none;
+		-webkit-user-select: none;
+		-o-user-select: none;
+	}
+	
+	.real {
+		position: fixed;
+		right: 2vw;
+		bottom: 0vw;
+		font-family: novel-mono-pro, sans-serif;
+		font-weight: 800;
+		font-style: normal;
+		color: black;
+		font-size: 2vw;
+		cursor: pointer;
+		z-index: 900;
+	}
+	
+	.real:hover{
+		color: red;
+	}
+	
+	#realityOn {
+		display: none;
+		color: red;
+	}
+	
+	#name {
+		font-family: novel-mono-pro, sans-serif;
+		font-weight: 800;
+		font-style: normal;
+		z-index: 600;
+		letter-spacing: 0.25vw;
+		font-size: 1.5vw;
+		position: fixed;
+		top: 2vw;
+		left: 2vw;
+		color: black;
+	}
+	
+	#eh {
+		font-weight: 600;
+		
+	}
+	#eh:hover {
+		color: red;
+	}
+	
+	#shareImg {
+		cursor: pointer;
+		z-index: 600;
+		position: fixed;
+		width: auto;
+		height: 3.5vw;
+		right: 18vw;
+		top: 1.25vw;
+		cursor: pointer;
+		user-select: none;
+		-moz-user-select: none;
+		-khtml-user-select: none;
+		-webkit-user-select: none;
+		-o-user-select: none;
+	}
+	
+	#bugReport {
+		font-family: "Helvetica Neue";
+		font-weight: 500;
+		z-index: 600;
+		font-size: 1.5vw;
+		position: fixed;
+		bottom: 0vw;
+		left: 2vw;
+		color: red;
+		cursor: pointer;
+	}
+	
+	#bg {
+		width: 100vw;
+		height: 100%;
+		position: absolute;
+		background-color: #626262;
+	}
+	
+	#arm {
+		z-index: 900;
+		width: 13vw;
+		height: auto;
+		position: fixed;
+		right: 0px;
+		top: 3vw;
+		display: none;
+		cursor: pointer;
+		user-select: none;
+		-moz-user-select: none;
+		-khtml-user-select: none;
+		-webkit-user-select: none;
+		-o-user-select: none;
+	}
+	
+	#unlockButton {
+		z-index: 500;
+		width: 2vw;
+		height: 2vw;
+		background-color: transparent;
+		position: absolute;
+		left: 13vw;
+		top: 52.75vw;
+		border: none;
+		user-select: none;
+		-moz-user-select: none;
+		-khtml-user-select: none;
+		-webkit-user-select: none;
+		-o-user-select: none;
+	}
+	
+	#ndr {
+		z-index: 999;
+		display: none;
+	}
+	
+	#snowLoading {
+		z-index: 11;
+		display: none;
+	}
+	
+ 
+</style>
+</head>
+<body>
+
+<div id="main">
+	<img id="ndr" src="ac/notDoneYet.png" class="landscape">
+	
+	<h1 id="title">VANCOUVER ADVENT CALENDAR</h1>
+	
+ 	<a id="share" href="mailto:emil.holthausen@gmail.com"
+ 	   title="Contact me here">
+ 	  <h1 id="name">BY <span id="eh">EMIL HOLTHAUSEN</span></h1>
+ 	</a>
+	
+	
+ 	<a id="share" href="mailto:emil.holthausen@gmail.com"
+ 	   title="Report bugs here">
+ 	  <h1 id="bugReport">Bug Report</h1>
+ 	</a>
+	
+	<h1 id="realityOn" class="real" onclick="realOff()">Reality: On </h1>
+	<h1 id="realityOff" class="real" onclick="realOn()">Reality: Off</h1>
+	
+	<img id="soundOn" src="ac/sound.png" class="speakerIcon" onclick="sfxOff()">
+	<img id="soundOff" src="ac/noSound.png" class="speakerIcon" onclick="sfxOn()">
+	
+	<img id="musicOn" src="ac/music.png" class="musicIcon" onclick="musicOff()">
+	<img id="musicOff" src="ac/noMusic.png" class="musicIcon" onclick="musicOn()">
+ 	<a id="share" href="mailto:?subject=Advent Calender Website&amp;body=Here's the link: emilholthausen.com Have a look it's pretty neat"
+ 	   title="Share by Email">
+ 	  <img id="shareImg" src="ac/sharingIcon.png">
+ 	</a>
+	 
+	<img id="arm" src="ac/arm.gif">
+	
+	<img id="mainFrame" class="landscape" src="ac/keinschnee.jpg">
+	<img id="regen" class="landscape" src="ac/regen.gif">
+
+
+
+<h1 id= "num1" class="numbers" onclick="day1(); this.style.display= 'none'">1</h1>
+<h1 id= "num2" class="numbers" onclick="day2(); this.style.display= 'none'">2</h1>
+<h1 id= "num3" class="numbers" onclick="day3(); this.style.display= 'none'">3</h1>
+<h1 id= "num4" class="numbers" onclick="day4(); this.style.display= 'none'">4</h1>
+<h1 id= "num5" class="numbers" onclick="day5(); this.style.display= 'none'">5</h1>
+<h1 id= "num6" class="numbers" onclick="day6(); this.style.display= 'none'">6</h1>
+<h1 id= "num7" class="numbers" onclick="day7(); this.style.display= 'none'">7</h1>
+<h1 id= "num8" class="numbers" onclick="day8(); this.style.display= 'none'">8</h1>
+<h1 id= "num9" class="numbers" onclick="day9(); this.style.display= 'none'">9</h1>
+<h1 id= "num10" class="numbers" onclick="day10(); this.style.display= 'none'">10</h1>
+<h1 id= "num11" class="numbers" onclick="day11(); this.style.display= 'none'">11</h1>
+<h1 id= "num12" class="numbers" onclick="day12(); this.style.display= 'none'">12</h1>
+<h1 id= "num13" class="numbers" onclick="day13(); this.style.display= 'none'">13</h1>
+<h1 id= "num14" class="numbers" onclick="day14(); this.style.display= 'none'">14</h1>
+<h1 id= "num15" class="numbers" onclick="day15(); this.style.display= 'none'">15</h1>
+<h1 id= "num16" class="numbers" onclick="day16(); this.style.display= 'none'">16</h1>
+<h1 id= "num17" class="numbers" onclick="day17(); this.style.display= 'none'">17</h1>
+<h1 id= "num18" class="numbers" onclick="day18(); this.style.display= 'none'">18</h1>
+<h1 id= "num19" class="numbers" onclick="day19(); this.style.display= 'none'">19</h1>
+<h1 id= "num20" class="numbers" onclick="day20(); this.style.display= 'none'">20</h1>
+<h1 id= "num21" class="numbers" onclick="day21(); this.style.display= 'none'">21</h1>
+<h1 id= "num22" class="numbers" onclick="day22(); this.style.display= 'none'">22</h1>
+<h1 id= "num23" class="numbers" onclick="day23(); this.style.display= 'none'">23</h1>
+<h1 id= "num24" class="numbers" onclick="day24(); this.style.display= 'none'">24</h1>
+
+<img id="d1" class="d" src="ac/Days/Bieber.gif">
+<img id="d2" class="d" src="ac/Days/wasser.png">
+<img id="lighthouse" class="d" src="ac/Days/lh-stone.png">
+<img id="d3" class="d" src="ac/Days/Schuh.gif">
+<img id="d33" class="d" src="ac/Days/wolken.png">
+<img id="d4" class="d" src="ac/Days/">
+<img id="d5" class="d" src="ac/Days/eislaeufer.gif">
+<img id="d6" class="d" src="ac/Days/Schneemann.gif">
+<img id="d7" class="d" src="ac/Days/Tanken.gif">
+<img id="d8" class="d" src="ac/Days/snowboarder.png">
+<img id="d88" class="d" src="ac/Days/afroman.png">
+<img id="d9" class="d" src="ac/Days/duck.gif">
+<img id="d10" class="d" src="ac/Days/KristinBoys.gif">
+<img id="d11" class="d" src="ac/Days/Iglu.png">
+<img id="d1111" class="d" src="ac/Days/ZZZ.gif">
+<img id="d12" class="d" src="ac/Days/Russe.gif">
+<img id="d13" class="d" src="ac/Days/schneeschippe.gif">
+<img id="d14" class="d" src="ac/Days/">
+<img id="d15" class="d" src="ac/Days/raven.png">
+<img id="d16" class="d" src="ac/Days/Orca.gif">
+<img id="d17" class="d" src="ac/Days/Hunde.gif">
+<img id="d18" class="d" src="ac/Days/angler.gif">
+<img id="d19" class="d" src="ac/Days/Ninalotte.png">
+<img id="d20" class="d" src="ac/Days/">
+<img id="d21" class="d" src="ac/Days/baum.gif">
+<img id="d22" class="d" src="ac/Days/grinch.gif">
+<img id="d23" class="d" src="ac/Days/Turkey.gif">
+<img id="d24" class="d" src="ac/Days/">
+
+<img id="snowLoading" class="landscape" src="ac/Days/schneeeismeerM.jpg">
+
+	
+	<audio id="BGnoise">
+	  <source src="ac/ACbgNoise.ogg" type="audio/ogg">
+	  <source src="ac/ACbgNoise.mp3" type="audio/mpeg">
+	  Your browser does not support the audio element.
+	</audio>
+	
+	<audio id="Music">
+	  <source src="ac/LastChristmas.ogg" type="audio/ogg">
+	  <source src="ac/LastChristmas.mp3" type="audio/mpeg">
+	  Your browser does not support the audio element.
+	</audio>
+	
+	<audio id="rainSFX">
+	  <source src="ac/RainSFX.ogg" type="audio/ogg">
+	  <source src="ac/RainSFX.mp3" type="audio/mpeg">
+	  Your browser does not support the audio element.
+	</audio>
+	
+	<button id="unlockButton" onclick="unlock()"></button>
+</div>
+</body>
+</html>
