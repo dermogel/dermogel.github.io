@@ -1,0 +1,84 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+<title>Important Business</title>
+<meta name="viewport" content="width=device-width, initial-scale=1" charset= "UTF-8">
+<style>
+	
+ .button {
+   background-color: transparent;
+   background-repeat: no-repeat;
+   border: none;
+   cursor: pointer;
+   outline: none;
+   width: 100%;
+   height: 100%;
+   position: absolute; 
+   z-index: 999;
+   margin:0 0;
+}
+ body {
+   background-color: black;
+   height: 100vh;
+ } 
+ 
+ img {
+ height: 100vh;
+ max-height: 1080px;
+ width: auto;
+ margin: 0 auto;
+ display: none;
+ z-index: 1;
+ } 
+ 
+</style>
+</head>
+<body>
+<button class="button" onClick="myFunction()";></button>
+
+	<img src="img/mainframe.jpg", id="imgstatic", display: none;>
+	
+
+	<img src="img/wgopening.gif", id="imgdoor", display: block;>
+
+
+	<img src="img/wgdoorcloses.gif", id="imgclose", display: none;>
+
+<script>
+var x = document.getElementById("imgstatic");
+var y = document.getElementById("imgdoor");
+var z = document.getElementById("imgclose");
+var t = false;
+
+function codeAddress() {
+y.style.display = "block";
+setTimeout(function()
+ { x.style.display= "block";
+   y.style.display = "none";
+   t = true;
+}, 450);
+setTimeout(function(){
+   document.title = "By Emil Holthausen";	
+}, 2000);
+}   
+
+window.onload = codeAddress;
+
+function myFunction(elem) {
+if(t == true ){
+    z.style.display = "block";
+    x.style.display = "none";
+  setTimeout(function()
+   {
+             window.close();
+             z.style.display = "none";
+             t = false;
+  }, 1200);
+}
+}
+
+</script>
+
+</body>
+</html>
